@@ -10,8 +10,9 @@ public class Banca {
             conto1.preleva(1750.5);
 
             System.out.println("Saldo conto: " + conto1.restituisciSaldo());
+            throw new BancaException("Errore durante il prelievo");
         } catch (BancaException e) {
-            System.out.println("Errore durante il prelievo: " + e);
+            System.out.println(e.getMessage());
             e.printStackTrace();
         }
 
@@ -23,9 +24,9 @@ public class Banca {
             conto2.preleva(2000);
 
             conto2.stampaSaldo();
-
+            throw new BancaException("Errore durante il prelievo");
         } catch (BancaException e) {
-            System.out.println("Errore durante il prelievo: " + e);
+            System.out.println(e.getMessage());
             e.printStackTrace();
         }
     }

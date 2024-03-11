@@ -22,6 +22,10 @@ public class Esercizio1 {
         do {
             System.out.println("Quale numero vuoi inserire? (inserisci 0 per uscire)");
             numberInput = input.nextInt();
+            if (numberInput == 0) {
+                System.out.println("Chiusura programma");
+                break;
+            }
             System.out.println("In quale posizione vuoi inserirlo?");
             positionNumber = input.nextInt();
             if (positionNumber > arrayNumbers.length) {
