@@ -13,13 +13,25 @@ public class Esercizio1 {
             arrayNumbers[i] = randomNumber.nextInt(1, 10);
         }
 
-        System.out.println("array random numbers:" + Arrays.toString(arrayNumbers));
+        System.out.println("array random numbers di origine:" + Arrays.toString(arrayNumbers));
 
         Scanner input = new Scanner(System.in);
 
         int numberInput;
         int positionNumber;
+        do {
+            System.out.println("Quale numero vuoi inserire? (inserisci 0 per uscire)");
+            numberInput = input.nextInt();
+            System.out.println("In quale posizione vuoi inserirlo?");
+            positionNumber = input.nextInt();
+            if (positionNumber > arrayNumbers.length) {
+                System.err.println("La posizione deve essere tra 1 e 5");
+            } else {
+                arrayNumbers[positionNumber - 1] = numberInput;
+            }
+            System.out.println("Il nuovo array è" + Arrays.toString(arrayNumbers));
 
-1
+        } while (numberInput != 0);
+
     }
 }
